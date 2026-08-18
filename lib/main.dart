@@ -1,9 +1,10 @@
-﻿import 'dart:async';
+import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'cloud/cloud_account_service.dart';
+import 'ui/account_screen.dart';
 import 'ui/home_screen.dart';
 
 Future<void> main() async {
@@ -156,8 +157,44 @@ class MorseboundApp extends StatelessWidget {
           color: Color(0xFF284049),
         ),
       ),
-      home: const HomeScreen(),
+      home: const _LaunchGate(),
     );
   }
 }
 
+/// Login-first entry point shared by Web and Android.
+///
+/// Existing authenticated users go straight to HomeScreen. Signed-out users
+/// are asked to sign in/create an account before training. Offline/local mode
+/// remains available, but must be deliberately chosen each app launch.
+class _LaunchGate extends StatefulWidget {
+  const _LaunchGate();
+
+  @override
+  State<_LaunchGate> createState() => _LaunchGateState();
+}
+
+class _LaunchGateState extends State<_LaunchGate> {
+  bool _continueOfflineForSession = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final cloud = CloudAccountService.instance;
+
+    return ValueListenableBuilder<CloudAccountState>(
+      valueListenable: cloud.state,
+      builder: (context, state, _) {
+        if (state.signedIn || _continueOfflineForSession) {
+          return const HomeScreen();
+        }
+
+        return AccountScreen(
+          launchMode: true,
+          onContinueOffline: () {
+            setState(() => _continueOfflineForSession = true);
+          },
+        );
+      },
+    );
+  }
+}

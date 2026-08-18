@@ -1,7 +1,7 @@
 {
   "app": "Morsebound",
-  "version": "1.3.4",
-  "build": 20,
+  "version": "1.4.0",
+  "build": 21,
   "channel": "independent-public-release",
   "soundFirst": true
 }

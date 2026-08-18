@@ -3,31 +3,90 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Morsebound Privacy</title>
+  <title>Morsebound Privacy Policy</title>
+  <meta name="description" content="Morsebound Privacy Policy covering local learning data, Firebase accounts, cloud synchronization, retention, security, and account deletion.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://graysonseven.github.io/Morsebound/privacy.html">
   <meta name="theme-color" content="#061218">
   <style>
-    body{margin:0;background:#061218;color:#e7f0f2;font:16px/1.6 system-ui,sans-serif}
-    main{max-width:760px;margin:auto;padding:48px 22px}
-    h1,h2{color:#8fffea} .muted{color:#9eb0b6} a{color:#8fffea}
-    .card{background:#0c2027;border:1px solid #29454e;border-radius:18px;padding:22px}
-  </style>
+    :root{color-scheme:dark}
+    *{box-sizing:border-box}
+    body{margin:0;background:#061218;color:#e7f0f2;font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+    main{max-width:860px;margin:auto;padding:48px 22px 64px}
+    h1{color:#8fffea;font-size:clamp(2rem,6vw,3.4rem);line-height:1.08;margin-bottom:8px}
+    h2{color:#8fffea;margin-top:34px}
+    h3{margin-top:24px}
+    a{color:#8fffea}
+    .muted{color:#9eb0b6}
+    .card{background:#0c2027;border:1px solid #29454e;border-radius:18px;padding:22px;margin:18px 0}
+    .nav{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 30px}
+    .nav a{display:inline-block;border:1px solid #41636b;border-radius:999px;padding:8px 12px;text-decoration:none}
+    ul{padding-left:22px}
+    footer{border-top:1px solid #233b43;margin-top:46px;padding-top:24px;color:#8fa5ac}
+</style>
 </head>
 <body><main>
-<h1>Morsebound Privacy</h1>
-<p class="muted">Effective August 18, 2026</p>
-<div class="card">
-<p>Morsebound is a sound-first Morse-code learning game by iCharles.</p>
-<h2>Local learning data</h2>
-<p>Learning mastery, reaction-time statistics, settings, streaks, and career progress are stored locally on the device or browser unless the user explicitly copies a backup.</p>
-<h2>Accounts and analytics</h2>
-<p>Morsebound does not require an account and does not include an advertising or analytics service in this release.</p>
-<h2>Android updates</h2>
-<p>On Google Play installations, Morsebound can ask Google Play whether an app update is available and can start Google's in-app update flow. Update delivery is handled by Google Play.</p>
-<h2>Audio</h2>
-<p>Morse training audio is bundled with the application. Morsebound does not record the microphone for its current learning modes.</p>
-<h2>Backups</h2>
-<p>If the user copies a Morsebound backup to the clipboard, the user controls where that backup is pasted or stored.</p>
-<h2>Changes</h2>
-<p>This notice will be updated if a future Morsebound release adds cloud accounts, analytics, advertising, or other data collection.</p>
-</div>
+  <p class="muted">MORSEBOUND · iCharles</p>
+  <h1>Privacy Policy</h1>
+  <p class="muted">Effective August 19, 2026</p>
+  <nav class="nav">
+    <a href="./">Open Morsebound</a>
+    <a href="about.html">About</a>
+    <a href="terms.html">Terms</a>
+    <a href="delete-account.html">Delete account/data</a>
+  </nav>
+
+  <div class="card">
+    <p>This Privacy Policy explains how <strong>Morsebound</strong>, an independent educational Morse code app by <strong>iCharles</strong>, handles information when you use the Web or Android app.</p>
+
+    <h2>1. Data stored locally</h2>
+    <p>Morsebound stores learning progress and preferences on your device or browser. This can include character mastery and retention state, reaction-time and accuracy statistics, confusion history, streaks, career/progression information, and app settings. Local data remains on that device/browser until you reset it, clear browser/app data, or uninstall the app, subject to platform backup behavior.</p>
+
+    <h2>2. Accounts and authentication</h2>
+    <p>Morsebound offers account creation and sign-in using email/password and Google Sign-In. Authentication is provided through Google Firebase Authentication. Depending on the sign-in method, Firebase Authentication can process account identifiers such as your email address, Firebase user ID, authentication provider information, and Google profile information made available by the sign-in provider.</p>
+
+    <h2>3. Cloud synchronization</h2>
+    <p>When you are signed in, Morsebound can store synchronized learning state in Google Cloud Firestore under your authenticated user ID. The synchronized state can include mastery/retention progress, career and streak information, and app settings. Morsebound uses per-user Firestore access rules so authenticated users can access only their own Morsebound user data through the app.</p>
+
+    <h2>4. How the data is used</h2>
+    <ul>
+      <li>Authenticate your Morsebound account.</li>
+      <li>Restore and synchronize learning progress between supported devices.</li>
+      <li>Adapt training to weak, slow, confused, and overdue learning material.</li>
+      <li>Preserve your settings, streaks, and progression.</li>
+      <li>Provide account support, security, and deletion when requested.</li>
+    </ul>
+
+    <h2>5. Advertising, analytics, and sale of data</h2>
+    <p>Morsebound does not include an advertising service or a dedicated analytics service in this release. Morsebound does not sell personal information.</p>
+
+    <h2>6. Service providers</h2>
+    <p>Morsebound relies on third-party infrastructure needed to operate the service:</p>
+    <ul>
+      <li><strong>Google Firebase</strong> for Authentication and Cloud Firestore synchronization.</li>
+      <li><strong>Google Sign-In</strong> when you choose Google as your authentication method.</li>
+      <li><strong>GitHub / GitHub Pages</strong> to host the public Web app, public policy pages, release information, and direct Android release downloads.</li>
+    </ul>
+    <p>Those providers can process normal technical information required to provide their services, such as network requests and service logs, under their own terms and privacy practices.</p>
+
+    <h2>7. Audio, microphone, camera, and contacts</h2>
+    <p>Morse training audio is generated or bundled for training. Morsebound does not require microphone recording, camera access, phone contacts, or precise location for its current learning modes.</p>
+
+    <h2>8. Security</h2>
+    <p>Cloud communication uses HTTPS/TLS provided by the platform and service providers. Cloud data access is authenticated and Firestore rules restrict Morsebound user documents by Firebase user ID. No online system can be guaranteed completely secure, so users should protect their account credentials and device access.</p>
+
+    <h2>9. Retention and deletion</h2>
+    <p>Local data is retained until you reset Morsebound data, clear the browser/app storage, or uninstall the app. Cloud learning data is retained while your Morsebound account remains active unless it is deleted earlier.</p>
+    <p>You can delete your cloud account from <strong>Settings → Account &amp; cloud sync → Delete Cloud Account</strong>. Morsebound is designed to delete the synchronized Firestore state associated with the account and then delete the Firebase Authentication account. You may also request deletion without reinstalling the app through the public <a href="delete-account.html">Account &amp; Data Deletion</a> page.</p>
+
+    <h2>10. Children</h2>
+    <p>Morsebound is a general educational tool and is not designed to knowingly collect more personal information than is needed for authentication and synchronization. Parents or guardians should supervise account creation by children where required by applicable law or platform policy.</p>
+
+    <h2>11. Changes to this policy</h2>
+    <p>This policy may be updated when Morsebound’s features, providers, or data practices change. The effective date at the top of this page identifies the current published version.</p>
+
+    <h2>12. Privacy contact</h2>
+    <p>For privacy questions or deletion requests, contact <a href="mailto:cselrahc.117@gmail.com?subject=Morsebound%20Privacy%20Request">cselrahc.117@gmail.com</a>. Do not send passwords, authentication codes, or other secret credentials.</p>
+  </div>
+  <footer>Morsebound by iCharles · <a href="terms.html">Terms of Use</a> · <a href="delete-account.html">Account &amp; Data Deletion</a></footer>
 </main></body></html>

@@ -1,42 +1,57 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="$FLUTTER_BASE_HREF">
-
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morsebound - Learn Morse Code by Sound | Free Morse Code Trainer</title>
+  <meta name="description" content="Learn Morse code by sound with Morsebound, a free adaptive Morse code trainer using Koch progression, Farnsworth spacing, retention practice, real copy, and radio-style listening.">
+  <meta name="keywords" content="learn Morse code, Morse code trainer, Morse code practice, learn Morse code by sound, Koch method, Farnsworth spacing, CW practice, Morse listening practice">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#061218">
+  <meta name="application-name" content="Morsebound">
+  <link rel="canonical" href="https://graysonseven.github.io/Morsebound/">
+  <link rel="alternate" href="learn-morse-code.html" title="Learn Morse Code by Sound">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="morsebound-mark.svg">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Morsebound">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Morsebound - Learn Morse Code by Sound">
+  <meta property="og:description" content="Free adaptive Morse code training built around sound-first recognition, Koch progression, Farnsworth spacing, retention, and real-copy practice.">
+  <meta property="og:url" content="https://graysonseven.github.io/Morsebound/">
+  <meta property="og:site_name" content="Morsebound">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Morsebound - Learn Morse Code by Sound">
+  <meta name="twitter:description" content="Free adaptive Morse code listening and copy practice on Web and Android.">
 
-  <title>Morsebound</title>
-  <link rel="manifest" href="manifest.json">
-  <!-- MORSEBOUND_PUBLIC_META -->
-  <meta name="description" content="Morsebound is a sound-first Morse code learning game with adaptive Signal Ops training.">
-  <meta name="theme-color" content="#061218">
-  <meta name="application-name" content="Morsebound">
-  <link rel="icon" type="image/svg+xml" href="morsebound-mark.svg">
-  <!-- MORSEBOUND_UPDATE_BRIDGE -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Morsebound",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Web, Android",
+    "url": "https://graysonseven.github.io/Morsebound/",
+    "downloadUrl": "https://github.com/GraysonSeven/Morsebound/releases/latest/download/Morsebound-Android.apk",
+    "description": "A free sound-first Morse code learning game with adaptive training, Koch progression, Farnsworth spacing, retention practice, Real Copy, and radio-style listening.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "iCharles"
+    }
+  }
+  </script>
+
   <script>
     window.morseboundOpenExternal = function(url) {
       window.open(url, "_blank", "noopener,noreferrer");
@@ -45,7 +60,7 @@
       window.location.reload();
     };
   </script>
-  <!-- MORSEBOUND_ANDROID_DOWNLOAD_STYLE_BEGIN -->
+
   <style>
     #morsebound-android-download {
       position: fixed;
@@ -79,27 +94,22 @@
       }
     }
   </style>
-  <!-- MORSEBOUND_ANDROID_DOWNLOAD_STYLE_END --></head>
+</head>
 <body>
-  <!-- MORSEBOUND_ANDROID_DOWNLOAD_BUTTON_BEGIN -->
   <a id="morsebound-android-download"
      href="https://github.com/GraysonSeven/Morsebound/releases/latest/download/Morsebound-Android.apk"
      target="_blank"
      rel="noopener noreferrer"
      aria-label="Download Morsebound Android APK">↓ Download Android APK</a>
-  <!-- MORSEBOUND_ANDROID_DOWNLOAD_BUTTON_END -->
-  <!--
-    You can customize the "flutter_bootstrap.js" script.
-    This is useful to provide a custom configuration to the Flutter loader
-    or to give the user feedback during the initialization process.
 
-    For more details:
-    * https://docs.flutter.dev/platform-integration/web/initialization
-  -->
+  <noscript>
+    <main>
+      <h1>Learn Morse Code by Sound with Morsebound</h1>
+      <p>Morsebound is a free sound-first Morse code trainer for Web and Android.</p>
+      <p><a href="learn-morse-code.html">Read the Morsebound learning guide</a></p>
+    </main>
+  </noscript>
+
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
-
-
-
-

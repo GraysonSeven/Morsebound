@@ -1,9 +1,9 @@
-﻿class ReleaseInfo {
+class ReleaseInfo {
   const ReleaseInfo._();
 
   static const appName = 'Morsebound';
-  static const version = '1.3.4';
-  static const build = 20;
+  static const version = '1.4.0';
+  static const build = 21;
   static const packageId = 'com.icharles.morsebound';
 
   static const brand = 'iCharles';

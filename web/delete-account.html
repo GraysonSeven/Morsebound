@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Morsebound Account & Data Deletion</title>
+  <meta name="description" content="Delete your Morsebound cloud account and synchronized learning data, or request deletion if you no longer have the app.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://graysonseven.github.io/Morsebound/delete-account.html">
+  <meta name="theme-color" content="#061218">
+  <style>
+    :root{color-scheme:dark}
+    *{box-sizing:border-box}
+    body{margin:0;background:#061218;color:#e7f0f2;font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+    main{max-width:860px;margin:auto;padding:48px 22px 64px}
+    h1{color:#8fffea;font-size:clamp(2rem,6vw,3.4rem);line-height:1.08;margin-bottom:8px}
+    h2{color:#8fffea;margin-top:34px}
+    h3{margin-top:24px}
+    a{color:#8fffea}
+    .muted{color:#9eb0b6}
+    .card{background:#0c2027;border:1px solid #29454e;border-radius:18px;padding:22px;margin:18px 0}
+    .nav{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 30px}
+    .nav a{display:inline-block;border:1px solid #41636b;border-radius:999px;padding:8px 12px;text-decoration:none}
+    ul{padding-left:22px}
+    footer{border-top:1px solid #233b43;margin-top:46px;padding-top:24px;color:#8fa5ac}
+</style>
+</head>
+<body><main>
+  <p class="muted">MORSEBOUND · iCharles</p>
+  <h1>Account &amp; Data Deletion</h1>
+  <p class="muted">Last updated August 19, 2026</p>
+  <nav class="nav">
+    <a href="./">Open Morsebound</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </nav>
+
+  <div class="card">
+    <h2>Delete directly inside Morsebound</h2>
+    <p>If you still have access to your account, this is the fastest method:</p>
+    <ol>
+      <li>Open Morsebound and sign in.</li>
+      <li>Open <strong>Settings</strong>.</li>
+      <li>Open <strong>Account &amp; cloud sync</strong>.</li>
+      <li>Select <strong>Delete Cloud Account</strong>.</li>
+      <li>Confirm the deletion.</li>
+    </ol>
+    <p>The in-app deletion flow is designed to delete the synchronized Morsebound Firestore state associated with your account and then delete the Firebase Authentication account.</p>
+
+    <h2>Request deletion without the app</h2>
+    <p>If Morsebound is no longer installed or you cannot use the in-app deletion path, send an account deletion request to:</p>
+    <p><a href="mailto:cselrahc.117@gmail.com?subject=Morsebound%20Account%20Deletion%20Request"><strong>cselrahc.117@gmail.com</strong></a></p>
+    <p>Use the subject <strong>Morsebound Account Deletion Request</strong> and identify the email address used for your Morsebound account. For account-security reasons, additional verification may be requested before deletion is completed.</p>
+    <p><strong>Never send your password, Google password, one-time code, recovery code, or other secret credential.</strong></p>
+
+    <h2>What is deleted</h2>
+    <ul>
+      <li>The Morsebound Firebase Authentication account.</li>
+      <li>The synchronized Morsebound cloud learning state associated with that user, including stored mastery/retention, career/streak, and settings data that Morsebound maintains for synchronization.</li>
+    </ul>
+
+    <h2>What may remain on your device</h2>
+    <p>Deleting a cloud account does not automatically erase local/offline progress stored on a device or browser. To remove local data too, use Morsebound’s local reset controls, clear the app/browser storage, or uninstall the app as appropriate.</p>
+
+    <h2>Retention</h2>
+    <p>Morsebound does not intentionally retain deleted cloud learning state after an account-deletion request is completed, except where a limited record may be required for security, abuse prevention, legal obligations, or provider-level backup/log retention outside Morsebound’s direct control.</p>
+  </div>
+  <footer>Morsebound by iCharles · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></footer>
+</main></body></html>

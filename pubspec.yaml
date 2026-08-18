@@ -1,7 +1,7 @@
-﻿name: morsebound
+name: morsebound
 description: Morsebound â€” adaptive sound-first Morse learning game by iCharles.
 publish_to: "none"
-version: 1.3.4+20
+version: 1.4.0+21
 
 environment:
   sdk: ">=3.6.0 <4.0.0"
