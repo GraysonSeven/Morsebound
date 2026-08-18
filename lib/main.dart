@@ -1,12 +1,14 @@
-import 'dart:async';
+﻿import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'cloud/cloud_account_service.dart';
 import 'ui/home_screen.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await CloudAccountService.instance.initialize();
 
   FlutterError.onError = (details) {
     FlutterError.presentError(details);
@@ -158,3 +160,4 @@ class MorseboundApp extends StatelessWidget {
     );
   }
 }
+

@@ -45,8 +45,49 @@
       window.location.reload();
     };
   </script>
-</head>
+  <!-- MORSEBOUND_ANDROID_DOWNLOAD_STYLE_BEGIN -->
+  <style>
+    #morsebound-android-download {
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      z-index: 2147483647;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 15px;
+      border: 1px solid rgba(103, 227, 205, .45);
+      border-radius: 999px;
+      background: rgba(6, 18, 24, .92);
+      color: #8fffea;
+      text-decoration: none;
+      font: 700 13px/1.1 system-ui, -apple-system, "Segoe UI", sans-serif;
+      letter-spacing: .2px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .32);
+      backdrop-filter: blur(10px);
+    }
+    #morsebound-android-download:hover {
+      background: rgba(17, 49, 58, .98);
+      border-color: rgba(143, 255, 234, .8);
+    }
+    @media (max-width: 520px) {
+      #morsebound-android-download {
+        right: 10px;
+        bottom: 10px;
+        padding: 10px 13px;
+        font-size: 12px;
+      }
+    }
+  </style>
+  <!-- MORSEBOUND_ANDROID_DOWNLOAD_STYLE_END --></head>
 <body>
+  <!-- MORSEBOUND_ANDROID_DOWNLOAD_BUTTON_BEGIN -->
+  <a id="morsebound-android-download"
+     href="https://github.com/GraysonSeven/Morsebound/releases/latest/download/Morsebound-Android.apk"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Download Morsebound Android APK">↓ Download Android APK</a>
+  <!-- MORSEBOUND_ANDROID_DOWNLOAD_BUTTON_END -->
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader
@@ -58,6 +99,7 @@
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
+
 
 
 

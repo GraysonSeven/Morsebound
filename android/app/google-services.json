@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "215406066318",
+    "project_id": "morsebound-93363745",
+    "storage_bucket": "morsebound-93363745.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215406066318:android:d60e62fdb2d1c262d2a7df",
+        "android_client_info": {
+          "package_name": "com.icharles.morsebound"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "215406066318-a3o0phrb8sfmt2oni920rr17t4jq3vvc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.icharles.morsebound",
+            "certificate_hash": "5ba9065e944c0d179aab636972eabd8f7a75ddd5"
+          }
+        },
+        {
+          "client_id": "215406066318-4q338o1pljg5nniafcrhti162t6pflg5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkl8N48cozxR59cWgcDrL8mwAppXqWbIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "215406066318-4q338o1pljg5nniafcrhti162t6pflg5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

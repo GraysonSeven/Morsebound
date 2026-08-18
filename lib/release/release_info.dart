@@ -1,14 +1,14 @@
-class ReleaseInfo {
+﻿class ReleaseInfo {
   const ReleaseInfo._();
 
   static const appName = 'Morsebound';
-  static const version = '1.2.0';
-  static const build = 15;
+  static const version = '1.3.4';
+  static const build = 20;
   static const packageId = 'com.icharles.morsebound';
 
   static const brand = 'iCharles';
   static const creatorCredit =
-      'by iCharles — Charles Leanne S. Lioc';
+      'by iCharles â€” Charles Leanne S. Lioc';
 
   /// Product-learning contract: main recognition gameplay stays auditory.
   static const soundFirstMainGame = true;
@@ -20,3 +20,6 @@ class ReleaseInfo {
 
   static String get displayVersion => '$version+$build';
 }
+
+
+

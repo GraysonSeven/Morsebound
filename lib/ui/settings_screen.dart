@@ -1,4 +1,4 @@
-
+﻿
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -12,6 +12,7 @@ import '../settings/app_settings.dart';
 import '../settings/settings_store.dart';
 import '../storage/backup_codec.dart';
 import '../storage/progress_store.dart';
+import 'account_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -443,6 +444,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                       const SizedBox(height: 16),
                       const Text(
+                        'ACCOUNT & CLOUD',
+                        style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 1.0),
+                      ),
+                      const SizedBox(height: 8),
+                      Card(child: ListTile(
+                        leading: const Icon(Icons.cloud_done_outlined),
+                        title: const Text('Account & cloud sync', style: TextStyle(fontWeight: FontWeight.w800)),
+                        subtitle: const Text('Keep mastery, retention, career progress, streaks, and settings synchronized across devices.'),
+                        trailing: const Icon(Icons.chevron_right_rounded),
+                        onTap: () => Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => const AccountScreen())),
+                      )),
+                      const SizedBox(height: 16),
+                      const Text(
                         'YOUR DATA',
                         style: TextStyle(
                           fontWeight: FontWeight.w900,
@@ -520,9 +534,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               ),
                               const SizedBox(height: 8),
                               const Text(
-                                'Privacy: learning progress is stored locally '
-                                'on this device/browser. Morsebound does not '
-                                'require an account or analytics service.',
+                                'Privacy: Morsebound remains usable offline. '
+                                'If you create an account, learning progress, '
+                                'career statistics, and settings are also stored '
+                                'in your private Firebase cloud account for '
+                                'cross-device synchronization. No advertising '
+                                'or analytics service is required.',
                                 style: TextStyle(fontSize: 12),
                               ),
                               const SizedBox(height: 14),
@@ -545,3 +562,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 }
+
+
+

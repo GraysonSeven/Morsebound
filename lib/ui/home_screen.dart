@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 
 import 'package:flutter/material.dart';
 
@@ -19,6 +19,7 @@ import 'real_copy_screen.dart';
 import 'settings_screen.dart';
 import 'widgets/signal_backdrop.dart';
 import 'word_rush_screen.dart';
+import 'account_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -267,7 +268,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   const SizedBox(height: 30),
                                   const Center(
                                     child: Text(
-                                      'Morsebound • iCharles\n'
+                                      'Morsebound â€¢ iCharles\n'
                                       '${ReleaseInfo.creatorCredit}',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
@@ -333,6 +334,12 @@ class _HomeScreenState extends State<HomeScreen>
             ],
           ),
         ),
+        IconButton.filledTonal(
+          tooltip: 'Account & cloud sync',
+          onPressed: () => _open(const AccountScreen()),
+          icon: const Icon(Icons.account_circle_outlined),
+        ),
+        const SizedBox(width: 6),
         IconButton.filledTonal(
           tooltip: 'Settings',
           onPressed: () => _open(const SettingsScreen()),
@@ -768,8 +775,8 @@ class _HomeScreenState extends State<HomeScreen>
       label: Padding(
         padding: const EdgeInsets.symmetric(vertical: 13),
         child: Text(
-          '${engine.automaticCount} AUTOMATIC • '
-          '${engine.retentionDueCount} DUE • OPEN MASTERY CENTER',
+          '${engine.automaticCount} AUTOMATIC â€¢ '
+          '${engine.retentionDueCount} DUE â€¢ OPEN MASTERY CENTER',
           textAlign: TextAlign.center,
           style: const TextStyle(
             fontWeight: FontWeight.w800,
@@ -1047,3 +1054,5 @@ class _StatusDot extends StatelessWidget {
     );
   }
 }
+
+
