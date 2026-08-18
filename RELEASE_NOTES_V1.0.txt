@@ -1,0 +1,29 @@
+MORSEBOUND 1.0.1 — FINAL PRODUCT HARDENING FIX
+
+Core product:
+- Signal Ops procedural/code-only communications game
+- Adaptive sound-first Morse learning
+- Daily Dispatch
+- Word Rush
+- Keying Lab
+- Real Copy
+- Real-world pitch/timing/radio transfer training
+- Retention/cold-copy mastery verification
+- Ability-based operator ranks
+- Career statistics, streaks, achievements, mastery dashboard
+
+V1 hardening:
+- Cumulative V0.8 retention hardening
+- Integrity-checked clipboard backup format (MorseboundBackupV2)
+- Restore-from-clipboard with validation + confirmation
+- Double-navigation guard
+- Release identity/version constants
+- Android/Web identity verification during install
+- Regression tests for backup integrity and release contract
+- Existing progress remains backward compatible
+
+Main gameplay remains sound-first. No visual dots/dashes are added.
+
+Version: 1.0.1+13
+Package: com.icharles.morsebound
+Brand: iCharles

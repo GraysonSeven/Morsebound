@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "app": "Morsebound",
+  "version": "1.2.0",
+  "build": 15,
+  "minSupportedBuild": 0,
+  "message": "Your Morsebound web app is up to date.",
+  "android": {
+    "downloadUrl": "",
+    "samsungStoreUrl": ""
+  }
+}
