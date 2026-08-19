@@ -6,7 +6,7 @@
   "minSupportedBuild": 0,
   "message": "Morsebound 1.4.0 adds login-first account access, search discovery, a professional About experience, Privacy Policy, Terms of Use, and account/data deletion information.",
   "android": {
-    "downloadUrl": "https://github.com/GraysonSeven/Morsebound/releases/latest/download/Morsebound-Android.apk",
+    "downloadUrl": "https://github.com/GraysonSeven/Morsebound/releases/download/v1.4.0/Morsebound-Android.apk",
     "samsungStoreUrl": ""
   }
 }
