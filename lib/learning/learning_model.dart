@@ -92,8 +92,7 @@ class CharacterStats {
       return SignalProficiency.automatic;
     }
 
-    if (mastery < 0.60 ||
-        (exposures >= 6 && accuracy < 0.70)) {
+    if (mastery < 0.60 || (exposures >= 6 && accuracy < 0.70)) {
       return SignalProficiency.weak;
     }
 
@@ -122,20 +121,16 @@ class CharacterStats {
         exposures: (json['exposures'] as num?)?.toInt() ?? 0,
         correct: (json['correct'] as num?)?.toInt() ?? 0,
         mastery: (json['mastery'] as num?)?.toDouble() ?? 0.20,
-        reactionEwmaMs:
-            (json['reactionEwmaMs'] as num?)?.toDouble() ?? 1800,
+        reactionEwmaMs: (json['reactionEwmaMs'] as num?)?.toDouble() ?? 1800,
         lastSeenMs: (json['lastSeenMs'] as num?)?.toInt() ?? 0,
         dueAtMs: (json['dueAtMs'] as num?)?.toInt() ?? 0,
         correctStreak: (json['correctStreak'] as num?)?.toInt() ?? 0,
         lapses: (json['lapses'] as num?)?.toInt() ?? 0,
-        retentionPasses:
-            (json['retentionPasses'] as num?)?.toInt() ?? 0,
-        retentionFails:
-            (json['retentionFails'] as num?)?.toInt() ?? 0,
+        retentionPasses: (json['retentionPasses'] as num?)?.toInt() ?? 0,
+        retentionFails: (json['retentionFails'] as num?)?.toInt() ?? 0,
         coldPasses: (json['coldPasses'] as num?)?.toInt() ?? 0,
         coldFails: (json['coldFails'] as num?)?.toInt() ?? 0,
-        lastRetentionMs:
-            (json['lastRetentionMs'] as num?)?.toInt() ?? 0,
+        lastRetentionMs: (json['lastRetentionMs'] as num?)?.toInt() ?? 0,
       );
 }
 
@@ -189,8 +184,7 @@ class LearningSnapshot {
     final rawConfusions = json['confusions'];
     if (rawConfusions is Map) {
       for (final entry in rawConfusions.entries) {
-        fresh.confusions[entry.key.toString()] =
-            (entry.value as num).toInt();
+        fresh.confusions[entry.key.toString()] = (entry.value as num).toInt();
       }
     }
 
@@ -246,9 +240,7 @@ class AdaptiveLearningEngine {
 
   int get automaticCount => unlocked
       .where(
-        (c) =>
-            snapshot.stats[c]!.proficiency ==
-            SignalProficiency.automatic,
+        (c) => snapshot.stats[c]!.proficiency == SignalProficiency.automatic,
       )
       .length;
 
@@ -326,26 +318,19 @@ class AdaptiveLearningEngine {
     for (final c in pool) {
       final s = snapshot.stats[c]!;
       final due = s.dueAtMs > 0 && now >= s.dueAtMs;
-      final unseenMs =
-          s.lastSeenMs == 0 ? 0 : max(0, now - s.lastSeenMs);
+      final unseenMs = s.lastSeenMs == 0 ? 0 : max(0, now - s.lastSeenMs);
 
       final newSignal = s.exposures < 6 ? 1.25 : 0.0;
-      final weakness =
-          (1.08 - s.mastery).clamp(0.08, 1.08).toDouble();
+      final weakness = (1.08 - s.mastery).clamp(0.08, 1.08).toDouble();
       final slow =
           ((s.reactionEwmaMs - 500) / 1700).clamp(0.0, 0.70).toDouble();
 
       final overdue = due
-          ? (0.80 +
-                  ((now - s.dueAtMs) / 3600000.0)
-                      .clamp(0.0, 1.20))
-              .toDouble()
+          ? (0.80 + ((now - s.dueAtMs) / 3600000.0).clamp(0.0, 1.20)).toDouble()
           : 0.0;
 
       final coldPressure =
-          unseenMs >= 2 * 60 * 60 * 1000 && s.mastery >= 0.60
-              ? 1.10
-              : 0.0;
+          unseenMs >= 2 * 60 * 60 * 1000 && s.mastery >= 0.60 ? 1.10 : 0.0;
 
       final lapsePressure = min(0.80, s.lapses * 0.10);
       final confusionPressure = _confusionPressure(c);
@@ -362,10 +347,7 @@ class AdaptiveLearningEngine {
         weight *= 0.55;
       }
 
-      if (_lastTarget == c &&
-          pool.length > 1 &&
-          !due &&
-          s.mastery >= 0.55) {
+      if (_lastTarget == c && pool.length > 1 && !due && s.mastery >= 0.55) {
         weight *= 0.28;
       }
 
@@ -375,8 +357,7 @@ class AdaptiveLearningEngine {
       ));
     }
 
-    final total =
-        candidates.fold<double>(0, (sum, item) => sum + item.weight);
+    final total = candidates.fold<double>(0, (sum, item) => sum + item.weight);
 
     var roll = _random.nextDouble() * total;
     for (final candidate in candidates) {
@@ -419,8 +400,7 @@ class AdaptiveLearningEngine {
         confusionScores[answer] =
             (confusionScores[answer] ?? 0) + entry.value * 2;
       } else if (answer == target && pool.contains(source)) {
-        confusionScores[source] =
-            (confusionScores[source] ?? 0) + entry.value;
+        confusionScores[source] = (confusionScores[source] ?? 0) + entry.value;
       }
     }
 
@@ -455,10 +435,8 @@ class AdaptiveLearningEngine {
     final dueBefore = stats.dueAtMs;
 
     final retentionTest = dueBefore > 0 && now >= dueBefore;
-    final unseenMs =
-        previousSeenMs == 0 ? 0 : max(0, now - previousSeenMs);
-    final coldTest =
-        retentionTest && unseenMs >= 2 * 60 * 60 * 1000;
+    final unseenMs = previousSeenMs == 0 ? 0 : max(0, now - previousSeenMs);
+    final coldTest = retentionTest && unseenMs >= 2 * 60 * 60 * 1000;
 
     final isCorrect = target == answer;
     final reaction = reactionMs.clamp(100, 5000).toDouble();
@@ -484,8 +462,7 @@ class AdaptiveLearningEngine {
         stats.coldPasses += 1;
       }
 
-      final speedScore =
-          ((2100 - reaction) / 1600).clamp(0.0, 1.0).toDouble();
+      final speedScore = ((2100 - reaction) / 1600).clamp(0.0, 1.0).toDouble();
 
       final evidence = 0.58 + (0.42 * speedScore);
       final spacingFactor = _spacingFactor(
@@ -495,17 +472,16 @@ class AdaptiveLearningEngine {
       );
 
       final gainRate = 0.18 * spacingFactor;
-      stats.mastery = (stats.mastery +
-              ((evidence - stats.mastery) * gainRate))
+      stats.mastery = (stats.mastery + ((evidence - stats.mastery) * gainRate))
           .clamp(0.0, 1.0)
           .toDouble();
 
       if (retentionTest) {
         final retentionBonus = coldTest ? 0.055 : 0.030;
-        stats.mastery = (stats.mastery +
-                retentionBonus * (0.45 + 0.55 * speedScore))
-            .clamp(0.0, 1.0)
-            .toDouble();
+        stats.mastery =
+            (stats.mastery + retentionBonus * (0.45 + 0.55 * speedScore))
+                .clamp(0.0, 1.0)
+                .toDouble();
       }
 
       if (reaction <= 1300) {
@@ -533,23 +509,20 @@ class AdaptiveLearningEngine {
               ? 0.62
               : 0.72;
 
-      stats.mastery =
-          (stats.mastery * multiplier).clamp(0.0, 1.0).toDouble();
+      stats.mastery = (stats.mastery * multiplier).clamp(0.0, 1.0).toDouble();
       stats.dueAtMs = now + 2 * 60 * 1000;
 
       final key = '$target>$answer';
       final pressure = retentionTest ? 2 : 1;
-      snapshot.confusions[key] =
-          (snapshot.confusions[key] ?? 0) + pressure;
+      snapshot.confusions[key] = (snapshot.confusions[key] ?? 0) + pressure;
     }
 
     final beforeUnlockCount = snapshot.unlockedCount;
     _maybeUnlock();
 
-    final String? unlockedCharacter =
-        snapshot.unlockedCount > beforeUnlockCount
-            ? MorseCode.learningOrder[snapshot.unlockedCount - 1]
-            : null;
+    final String? unlockedCharacter = snapshot.unlockedCount > beforeUnlockCount
+        ? MorseCode.learningOrder[snapshot.unlockedCount - 1]
+        : null;
 
     return LearningOutcome(
       correct: isCorrect,
@@ -620,9 +593,7 @@ class AdaptiveLearningEngine {
       return 3 * 24 * 60;
     }
 
-    if (stats.mastery >= 0.86 &&
-        verified >= 2 &&
-        stats.correctStreak >= 4) {
+    if (stats.mastery >= 0.86 && verified >= 2 && stats.correctStreak >= 4) {
       return 24 * 60;
     }
 
@@ -643,13 +614,19 @@ class AdaptiveLearningEngine {
 
     final pool = unlocked;
 
-    if (snapshot.totalTrials < pool.length * 12) return;
+    // Acquisition and automaticity are intentionally separate.
+    //
+    // Accuracy unlocks new material. Reaction time still influences review
+    // priority, "perfect" responses, mastery/automaticity and operator rank,
+    // but a correct learner is never trapped on the current Koch set just
+    // because they need more time to identify the signal.
+    if (snapshot.totalTrials < pool.length * 10) return;
 
     final weakestExposures =
         pool.map((c) => snapshot.stats[c]!.exposures).reduce(min);
     if (weakestExposures < 6) return;
 
-    final accuracy = pool
+    final averageAccuracy = pool
             .map((c) => snapshot.stats[c]!.accuracy)
             .fold<double>(0, (a, b) => a + b) /
         pool.length;
@@ -657,24 +634,14 @@ class AdaptiveLearningEngine {
     final weakestAccuracy =
         pool.map((c) => snapshot.stats[c]!.accuracy).reduce(min);
 
-    final avgMastery = pool
-            .map((c) => snapshot.stats[c]!.mastery)
-            .fold<double>(0, (a, b) => a + b) /
-        pool.length;
+    final stableSignals =
+        pool.where((c) => snapshot.stats[c]!.correctStreak >= 2).length;
 
-    final weakestMastery =
-        pool.map((c) => snapshot.stats[c]!.mastery).reduce(min);
+    final requiredStableSignals = max(1, pool.length - 1);
 
-    final avgReaction = pool
-            .map((c) => snapshot.stats[c]!.reactionEwmaMs)
-            .fold<double>(0, (a, b) => a + b) /
-        pool.length;
-
-    if (accuracy >= 0.88 &&
-        weakestAccuracy >= 0.72 &&
-        avgMastery >= 0.74 &&
-        weakestMastery >= 0.62 &&
-        avgReaction <= 1450) {
+    if (averageAccuracy >= 0.85 &&
+        weakestAccuracy >= 0.67 &&
+        stableSignals >= requiredStableSignals) {
       snapshot.unlockedCount += 1;
     }
   }

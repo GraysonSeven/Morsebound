@@ -68,8 +68,7 @@ class AboutMorseboundScreen extends StatelessWidget {
                 const _InfoCard(
                   icon: Icons.school_outlined,
                   title: 'PURPOSE',
-                  body:
-                      'Morsebound is a sound-first Morse code learning game '
+                  body: 'Morsebound is a sound-first Morse code learning game '
                       'designed to build direct auditory recognition instead '
                       'of dependence on visual dot-and-dash decoding.',
                 ),
@@ -77,8 +76,7 @@ class AboutMorseboundScreen extends StatelessWidget {
                 const _InfoCard(
                   icon: Icons.hearing_rounded,
                   title: 'TRAINING APPROACH',
-                  body:
-                      'Training combines gradual character progression, '
+                  body: 'Training combines gradual character progression, '
                       'Farnsworth-style spacing, adaptive review, active '
                       'recall, retention checks, typed Real Copy, sending '
                       'practice, and radio-style variation.',
@@ -87,8 +85,7 @@ class AboutMorseboundScreen extends StatelessWidget {
                 const _InfoCard(
                   icon: Icons.cloud_done_outlined,
                   title: 'ACCOUNTS & SYNC',
-                  body:
-                      'Signing in is recommended so mastery, retention, '
+                  body: 'Signing in is recommended so mastery, retention, '
                       'career progress, streaks, and settings can synchronize '
                       'between supported devices. Local/offline training '
                       'remains available by explicit choice.',
@@ -97,8 +94,7 @@ class AboutMorseboundScreen extends StatelessWidget {
                 const _InfoCard(
                   icon: Icons.shield_outlined,
                   title: 'PRIVACY',
-                  body:
-                      'Morsebound does not use advertising or a dedicated '
+                  body: 'Morsebound does not use advertising or a dedicated '
                       'analytics service in this release. Firebase '
                       'Authentication and Cloud Firestore provide optional '
                       'account sign-in and synchronized progress storage.',
@@ -141,6 +137,14 @@ class AboutMorseboundScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(20),
                     child: Column(
                       children: [
+                        Image.asset(
+                          'assets/audio/morse/icharles-brand.png',
+                          width: 190,
+                          height: 190,
+                          fit: BoxFit.contain,
+                          filterQuality: FilterQuality.high,
+                        ),
+                        const SizedBox(height: 10),
                         const Text(
                           ReleaseInfo.brand,
                           style: TextStyle(

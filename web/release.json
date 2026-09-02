@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "app": "Morsebound",
-  "version": "1.4.0",
-  "build": 21,
+  "version": "1.4.1",
+  "build": 22,
   "minSupportedBuild": 0,
-  "message": "Morsebound 1.4.0 adds login-first account access, search discovery, a professional About experience, Privacy Policy, Terms of Use, and account/data deletion information.",
+  "message": "Morsebound 1.4.1 lets accurate learners progress without a reaction-time unlock gate, adds the official iCharles creator mark, and refreshes the Morsebound product icon while preserving its original palette.",
   "android": {
-    "downloadUrl": "https://github.com/GraysonSeven/Morsebound/releases/download/v1.4.0/Morsebound-Android.apk",
+    "downloadUrl": "https://github.com/GraysonSeven/Morsebound/releases/download/v1.4.1/Morsebound-Android.apk",
     "samsungStoreUrl": ""
   }
 }

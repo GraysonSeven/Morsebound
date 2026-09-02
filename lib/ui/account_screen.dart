@@ -55,9 +55,7 @@ class _AccountScreenState extends State<AccountScreen> {
               child: ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: 620),
                 child: state.available
-                    ? (state.signedIn
-                        ? _signedIn(state)
-                        : _signedOut(state))
+                    ? (state.signedIn ? _signedIn(state) : _signedOut(state))
                     : _notConfigured(state),
               ),
             ),
@@ -116,6 +114,16 @@ class _AccountScreenState extends State<AccountScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           if (widget.launchMode) ...[
+            Center(
+              child: Image.asset(
+                'assets/audio/morse/icharles-brand.png',
+                width: 118,
+                height: 118,
+                fit: BoxFit.contain,
+                filterQuality: FilterQuality.high,
+              ),
+            ),
+            const SizedBox(height: 10),
             const Text(
               'SIGN IN BEFORE TRAINING',
               style: TextStyle(
@@ -278,9 +286,8 @@ class _AccountScreenState extends State<AccountScreen> {
                         child: const Text('PRIVACY'),
                       ),
                       TextButton(
-                        onPressed: _busy
-                            ? null
-                            : () => _openLegal(LegalSection.terms),
+                        onPressed:
+                            _busy ? null : () => _openLegal(LegalSection.terms),
                         child: const Text('TERMS'),
                       ),
                       TextButton(

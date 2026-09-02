@@ -4,8 +4,8 @@ import 'package:morsebound/release/release_info.dart';
 void main() {
   test('V1 release identity is locked', () {
     expect(ReleaseInfo.appName, 'Morsebound');
-    expect(ReleaseInfo.version, '1.4.0');
-    expect(ReleaseInfo.build, 21);
+    expect(ReleaseInfo.version, '1.4.1');
+    expect(ReleaseInfo.build, 22);
     expect(
       ReleaseInfo.packageId,
       'com.icharles.morsebound',
@@ -17,6 +17,3 @@ void main() {
     expect(ReleaseInfo.soundFirstMainGame, isTrue);
   });
 }
-
-
-

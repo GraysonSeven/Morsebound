@@ -1,7 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#061218"/>
-  <path d="M10 32c6-12 12-12 18 0s12 12 18 0 7-7 8 0"
-        fill="none" stroke="#8FFFEA" stroke-width="5"
-        stroke-linecap="round"/>
-  <circle cx="32" cy="32" r="4" fill="#55D6BE"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#061218"/>
+  <path d="M92 256a164 164 0 0 1 88-145"
+        fill="none" stroke="#55D6BE" stroke-width="18" stroke-linecap="round"/>
+  <path d="M332 111a164 164 0 0 1 88 145"
+        fill="none" stroke="#55D6BE" stroke-width="18" stroke-linecap="round"/>
+  <path d="M420 256a164 164 0 0 1-88 145"
+        fill="none" stroke="#55D6BE" stroke-width="18" stroke-linecap="round"/>
+  <path d="M180 401a164 164 0 0 1-88-145"
+        fill="none" stroke="#55D6BE" stroke-width="18" stroke-linecap="round"/>
+
+  <!-- Relay / compass symbol, with a subtle M silhouette. -->
+  <path d="M132 224 L220 152 L256 205 L292 152 L380 224
+           L344 252 L292 209 L292 334 L256 382
+           L220 334 L220 209 L168 252 Z"
+        fill="#8FFFEA"/>
+  <path d="M247 196 L265 196 L265 325 L256 340 L247 325 Z"
+        fill="#061218"/>
+
+  <circle cx="256" cy="270" r="19" fill="#55D6BE"/>
+  <circle cx="256" cy="270" r="8" fill="#061218"/>
+
+  <path d="M256 92 L268 127 L303 139 L268 151
+           L256 186 L244 151 L209 139 L244 127 Z"
+        fill="#8FFFEA"/>
+
+  <!-- Morse pulse signature -->
+  <circle cx="204" cy="408" r="9" fill="#8FFFEA"/>
+  <rect x="231" y="401" width="50" height="14" rx="7" fill="#8FFFEA"/>
+  <circle cx="307" cy="408" r="9" fill="#8FFFEA"/>
 </svg>
