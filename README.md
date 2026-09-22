@@ -15,3 +15,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Portfolio
+
+- [Morsebound Morse code training app case study](https://icharles.pages.dev/portfolio/projects/morsebound.html)
+- [Charles Lioc software developer portfolio](https://icharles.pages.dev/portfolio/)
+- [iCharles — custom software, web apps and business systems](https://icharles.pages.dev/)
